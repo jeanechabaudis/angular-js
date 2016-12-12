@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<div ng-controller="ctrlAnimate">
+		<input type="text" ng-model="producto">
+		<hr>
+		<button ng-click="agregarProducto()">Agregar</button>
+		<button ng-click="eliminarProducto()">Eliminar</button>
+		<button ng-click="obtenerClima()">Obtener Clima</button>
+		<hr>
+		<h3>Clima en santo domingo</h3>
+		<div>
+			{{ clima.temp }} | {{ clima.text }}
+		</div>
+		<hr>
+		<h3>Lista de Productos</h3>
+		<div ng-repeat="item in listaProductos">
+			{{ item.nombre }}
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+	<script src="app_inicio.js"></script>
+</body>
+</html>
