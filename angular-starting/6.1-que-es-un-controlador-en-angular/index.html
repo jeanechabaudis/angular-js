@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="tiendaDeFruta" >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+</head>
+<body>
+
+	<div ng-controller="controlador1">
+
+		<input type="text" ng-model="cantidad">
+
+		<p>Precio total {{ cantidad * precio | currency }} </p>
+		
+	</div>
+
+	<script>
+
+		var miAplicacion = angular.module('tiendaDeFruta',[]);
+
+		miAplicacion.controller('controlador1',['$scope',function($scope){
+
+			$scope.cantidad = 1;
+			$scope.precio = 2.15;
+
+		}]);
+
+	</script>
+
+</body>
+</html>

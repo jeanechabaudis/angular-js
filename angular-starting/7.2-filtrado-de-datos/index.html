@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+</head>
+<body>
+
+	<div ng-controller="controlador1">
+		
+		<h1>Agenda telefonica</h1>
+		
+		<label>Buscar</label>
+		<input type="search" ng-model="busqueda">
+		<p ng-repeat="entrada in agenda | filter:busqueda ">
+			{{ entrada.nombre }} {{ entrada.telefono }}
+		</p>
+
+	</div>
+	
+	<script>
+		var miAplicacion = angular.module('myApp',[]);
+
+		miAplicacion.controller('controlador1',['$scope',function($scope){
+
+			$scope.agenda = [
+				{nombre: "jean",telefono: "123456"},
+				{nombre: "ruben",telefono: "123456"},
+				{nombre: "frank",telefono: "123456"},
+				{nombre: "alex",telefono: "999999"}
+			];
+
+		}]);
+	</script>
+</body>
+</html>

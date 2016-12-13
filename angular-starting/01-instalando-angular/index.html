@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+</head>
+<body>
+
+	<h1>Expresiones AngularJS</h1>
+	<p>{{ (10 * 2) + 23 - 2 }} años</p>
+	
+	<p>{{ 3*9 }} cosas !!!</p>
+
+	<hr>
+
+	<h1>FILTROS</h1>
+	<h2>Tienda de verduras</h2>
+
+	<ul>
+		<li>apio {{ 50 | currency }}</li>
+		<li>brocoli {{ 50 | currency:"S./" }}</li>
+		<li>espinaca {{ 50 + 10 | currency:"S./" }} desde {{ 'PERú' | uppercase }}</li>
+	</ul>
+
+	<h1>DIRECTIVAS</h1>
+	<div ng-controller="controlador1">
+		<div ng-show="true">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia veritatis delectus quasi, unde beatae cum magnam atque iusto facilis quibusdam itaque, voluptates perferendis consectetur iste ducimus vitae. Nisi nesciunt, dolore.
+		</div>
+		<button ng-click="controladorBoton()" ng-show="false">Hola</button>
+	</div>
+
+</body>
+</html>

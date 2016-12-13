@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+	<style>
+		.angular{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div ng-controller="controlador1">
+		
+		<img ng-src="{{ imagen }}" width="100px">
+		<button ng-click="img('contilogo.jpg')">imagen 1</button>
+		<button ng-click="img('foto carnet.jpg')">imagen 2</button>
+
+	</div>
+	
+	<script>
+		var miAplicacion = angular.module('myApp',[]);
+
+		miAplicacion.controller('controlador1',['$scope',function($scope){
+
+			$scope.imagen = 'contilogo.jpg';
+
+			$scope.img = function(img){
+				$scope.imagen = img;
+			};
+
+		}]);
+	</script>
+</body>
+</html>

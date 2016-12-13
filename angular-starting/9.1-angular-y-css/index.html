@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+	<style>
+		.angular{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div ng-controller="controlador1">
+		
+		<div>
+			<p ng-style="estilos" ng-class="claseEspecial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt sequi in et ullam, dicta suscipit tempora repellat delectus nostrum minus libero dolor assumenda quam, numquam magni, consequatur laborum. Mollitia, facere.</p>
+		</div>
+
+		<button ng-click="cambiarPropiedades()">cambiar propiedades</button>
+		<button ng-click="cambiarClases()">cambiar propiedades</button>
+		<button ng-click="reiniciarClases()">reiniciar propiedades</button>
+
+	</div>
+	
+	<script>
+		var miAplicacion = angular.module('myApp',[]);
+
+		miAplicacion.controller('controlador1',['$scope',function($scope){
+
+			$scope.cambiarPropiedades = function(){
+				$scope.estilos = {background:"pink",color: "red"};
+
+			}
+
+			$scope.cambiarClases = function(){
+				$scope.claseEspecial = "angular";
+				
+			}
+
+			$scope.reiniciarClases = function(){
+				$scope.estilos = "";
+				$scope.claseEspecial = "";
+				
+			}
+
+		}]);
+	</script>
+</body>
+</html>

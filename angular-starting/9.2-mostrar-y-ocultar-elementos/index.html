@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+	<style>
+		.angular{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div ng-controller="controlador1">
+		
+		<h1 ng-show="visibilidadMensaje">
+			alerta
+		</h1>
+
+		<button ng-click="mostrar()">ver</button>
+		<button ng-click="ocultar()">ocultar</button>
+
+	</div>
+	
+	<script>
+		var miAplicacion = angular.module('myApp',[]);
+
+		miAplicacion.controller('controlador1',['$scope',function($scope){
+
+			$scope.visibilidadMensaje = false;
+
+			$scope.mostrar = function(){
+				$scope.visibilidadMensaje = true;
+			};
+
+			$scope.ocultar = function(){
+				$scope.visibilidadMensaje = false;
+			};
+
+		}]);
+	</script>
+</body>
+</html>

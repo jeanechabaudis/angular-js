@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+</head>
+<body>
+
+	<div ng-controller="controlador1">
+		
+		<button ng-click="clickSimple()">click</button>
+		<button ng-dblclick="clickDoble()">doble click plis</button>
+
+		<img src="foto carnet.jpg" ng-mouseleave="mouseDejalaImagen()" ng-mouseenter="mouseSobreImagen()" width="100px">
+
+		{{ evento }}
+
+	</div>
+	
+	<script>
+		var miAplicacion = angular.module('myApp',[]);
+
+		miAplicacion.controller('controlador1',['$scope',function($scope){
+
+			$scope.clickSimple = function(){
+				$scope.evento = "click";
+			}
+
+			$scope.clickDoble = function(){
+				$scope.evento = "click doble";
+			}
+
+			$scope.mouseDejalaImagen = function(){
+				$scope.evento = "mouse Deja la Imagen";
+			}
+
+			$scope.mouseSobreImagen = function(){
+				$scope.evento = "mouse Sobre Imagen";
+			}
+
+		}]);
+	</script>
+</body>
+</html>
