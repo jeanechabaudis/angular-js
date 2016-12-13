@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="pizza">
+
+	<h1>Pizza</h1>
+
+	<form id="formulario" name="formulario" novalidate>
+		<label>Nombre</label>
+		<input type="text" name="nombre" ng-model="orden.nombre" required="required">
+
+		<label>Email</label>
+		<input type="text" name="nombre" ng-model="orden.email" required="required">
+
+		<label>¿Cuantas pizzas deseas? {{ orden.cantidad }}</label>
+		<input type="range" name="nombre" ng-model="orden.cantidad" min="1" max="10" required="required">
+
+		<br>
+
+		<input type="submit" ng-disabled="formulario.$invalid" value="Ordenar">
+	</form>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+	<script>
+		angular.module('pizza',[]);
+	</script>
+</body>
+</html>

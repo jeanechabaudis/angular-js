@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
+</head>
+<body ng-app="myApp">
+	
+	<div class="mt++ p++ t0" flex-conrtainer="column" ng-controller="ctrlContacto">
+		<div flex-container="row">
+			<div flex-item>
+				<lx-text-field label="empresa" disabled="true">
+					<input type="text" ng-model="contacto.empresa" ng-disable="true">
+				</lx-text-field>
+			</div>
+		</div>
+		<div class="mt++" flex-container="row">
+			<div flex-item>
+				<form>
+					<lx-text-field label="Nombre completo" fixed-label="true">
+						<input type="text" ng-model="contacto.nombrecompleto" ng-disable="true">
+					</lx-text-field>
+					<lx-text-field label="Telefono" fixed-label="true">
+						<input type="text" ng-model="contacto.telefono" ng-disable="true">
+					</lx-text-field>
+					<lx-text-field label="Correo electronico" fixed-label="true">
+						<input type="text" ng-model="contacto.correo" ng-disable="true">
+					</lx-text-field>
+					<lx-text-field label="Direccion" fixed-label="true">
+						<input type="text" ng-model="contacto.direccion" ng-disable="true">
+					</lx-text-field>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

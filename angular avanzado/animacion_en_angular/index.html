@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.item.ng-move,
+		.item.ng-enter,
+		.item.ng-leave{
+			transition: all linear 5s;
+		}
+
+		.item.ng-leave.ng-leave-active,
+		.item.ng-move,
+		.item.ng-enter{
+			opacity: 0;
+		}
+
+		.item.ng-leave,
+		.item.ng-move.ng-move-active,
+		.item.ng-enter.ng-enter-active{
+			opacity: 1;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="ctrlAnimate">
+		<input type="text" ng-model="producto">
+		<hr>
+		<div>
+			<button ng-click="agregarProducto()">agregar</button>
+			<button ng-click="eliminarProducto()">eliminar</button>
+		</div>
+		<h3>Lista de Productos</h3>
+		<div style="background: pink; padding: 1rem;margin-bottom: 10px;" ng-repeat="item in listaProductos">
+			{{ item.nombre }}
+		</div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+	<script src="angular-animate.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

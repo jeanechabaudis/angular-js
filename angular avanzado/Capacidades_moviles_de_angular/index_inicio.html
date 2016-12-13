@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<div ng-controller="ctrlAnimate">
+		<input type="text" ng-model="producto">
+		<hr>
+		<div>
+			<button ng-click="agregarProducto()">agregar</button>
+			<button ng-click="eliminarProducto()">eliminar</button>
+		</div>
+		<h3>Lista de Productos</h3>
+		<div style="background: pink; padding: 1rem;margin-bottom: 10px;" ng-repeat="item in listaProductos" ng-swipe-left="eliminarProducto()" ng-swipe-right="eliminarProducto()">
+			{{ item.nombre }}
+		</div>
+	</div>
+	
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-touch/angular-touch.js"></script>
+	<script src="app_inicio.js"></script>
+</body>
+</html>

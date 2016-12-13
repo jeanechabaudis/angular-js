@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="pizza">
+	<div ng-controller="pizzaOnline">
+		<h1>Pizza</h1>
+
+		<form ng-hide="pizzaOk" ng-submit="ordenarPizza()" id="formulario" name="formulario" novalidate>
+			<label>Nombre</label>
+			<input type="text" name="nombre" ng-model="orden.nombre" required="required">
+
+			<div ng-show="!orden.nombre && formulario.$submitted">Deves rellenar nombre</div>
+
+			<label>Email</label>
+			<input type="text" name="nombre" ng-model="orden.email" required="required">
+			<div ng-show="!orden.email && formulario.$submitted">Deves rellenar email</div>
+
+			<label>¿Cuantas pizzas deseas? {{ orden.cantidad }}</label>
+			<input type="range" name="nombre" ng-model="orden.cantidad" min="1" max="10" required="required">
+			<div ng-show="orden.cantidad < 3 && formulario.$submitted">Deves rellenar cantidad</div>
+
+			<br>
+
+			<input type="submit" value="Ordenar">
+		</form>
+
+		<div ng-show="pizzaOk">
+			<h3>Sale una orden de pizza!!!</h3>
+			<h4>{{ orden.cantidad }} pizzas para {{ orden.nombre }} {{ orden.email }}</h4>
+		</div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+	<script>
+		angular.module('pizza',[])
+			.controller('pizzaOnline',function($scope){
+				$scope.orden = {
+					cantidad: 1
+				}
+
+				$scope.ordenarPizza = function(){
+					if ($scope.formulario.$valid) {
+						$scope.pizzaOk = true;
+					}
+				}
+			})
+	</script>
+</body>
+</html>

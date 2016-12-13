@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div ng-controller="ctrlFire">
+		<input type="text" ng-model="producto">
+		<hr>
+		<div>
+			<button ng-click="agregarProducto()">agregar</button>
+			<button ng-click="eliminarProducto()">eliminar</button>
+		</div>
+		<hr>
+		<h3>Lista de productos</h3>
+		<div ng-repeat="item in listaProductos"></div>
+	</div>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/firebase/firebase.js"></script>
+	<script src="bower_components/angularfire/dist/angularfire.js"></script>
+	<script src="app_inicio.js"></script>
+</body>
+</html>
