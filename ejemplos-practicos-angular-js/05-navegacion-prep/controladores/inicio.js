@@ -1,4 +1,3 @@
-angular.module('navegacion',['ngRoute'])
-	.controller('inicio', function($scoper){
-		
-	})
+miapp.controller('inicio', function($scope){
+	$scope.saludo = "Hola mundo";
+});

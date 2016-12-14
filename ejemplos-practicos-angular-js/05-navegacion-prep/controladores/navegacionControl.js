@@ -1,4 +1,4 @@
-angular.module('navegacion',['ngRoute'])
+/*angular.module('navegacion',['ngRoute'])
 	.controller('navegacionControl', function($scoper){
 		
-	})
+	})*/
